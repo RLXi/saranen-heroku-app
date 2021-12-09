@@ -2,27 +2,20 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use(express.static("public"));
+const people = require("./routes/users");
+const locations = require("./routes/location");
 
-const staticDB = [
-  {
-    id: 1,
-    name: "admin",
-    interests: "everything",
-  },
-  {
-    id: 2,
-    name: "dev",
-    interests: "only dev things",
-  },
-];
+app.use(express.static("public"));
+app.use((req, res, next) => {
+  console.log("I'm middleware");
+  next();
+});
+
+app.use("/people", people);
+app.use("/locations", locations);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
-});
-
-app.get("/people", (req, res) => {
-  res.status(200).json(staticDB);
 });
 
 app.listen(port, () => {
