@@ -5,6 +5,8 @@ const deleteBtn = document.getElementById("delete");
 const locationList = document.querySelector(".location-list");
 const url = "/locations";
 
+const event = new Event("click");
+
 getBtn.addEventListener("click", async (e) => {
   const res = await fetch(url);
   const json = await res.json();
@@ -30,7 +32,7 @@ postBtn.addEventListener("click", async (e) => {
     },
     body: JSON.stringify(obj),
   });
-  const json = await res.json();
+  getBtn.dispatchEvent(event);
 });
 
 deleteBtn.addEventListener("click", async (e) => {
@@ -38,6 +40,7 @@ deleteBtn.addEventListener("click", async (e) => {
   const res = await fetch(`${url}/${del.value}`, { method: "DELETE" });
   const json = await res.json();
   alert(json.msg);
+  getBtn.dispatchEvent(event);
 });
 
 async function fetchPeople() {

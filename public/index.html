@@ -37,9 +37,9 @@
               <ul class="people"></ul>
             </div>
           </div>
-          <div class="card locations">
+          <div class="card locations mt-3">
             <div class="card-body">
-              <ul class="list-unstyled">
+              <ul class="list-unstyled text-center">
                 <li>
                   <button id="get" class="btn btn-primary">
                     Get locations
@@ -47,8 +47,14 @@
                 </li>
                 <li>
                   <div>
-                    <input type="number" name="lat" />
-                    <input type="number" name="long" />
+                    <div class="input-group">
+                      <span class="input-group-text">Latitude</span>
+                      <input type="number" class="form-control" name="lat" />
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-text">Longitude</span>
+                      <input type="number" class="form-control" name="long" />
+                    </div>
                     <button id="post" class="btn btn-success">
                       Add location
                     </button>
@@ -56,9 +62,12 @@
                 </li>
                 <li>
                   <div>
-                    <input type="number" name="del" />
+                    <div class="input-group">
+                      <span class="input-group-text">ID</span>
+                      <input type="number" class="form-control" name="del" />
+                    </div>
                     <button id="delete" class="btn btn-danger">
-                      Delete first location
+                      Delete location
                     </button>
                   </div>
                 </li>
