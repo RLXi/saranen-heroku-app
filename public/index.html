@@ -40,35 +40,43 @@
           <div class="card locations mt-3">
             <div class="card-body">
               <ul class="list-unstyled text-center">
-                <li>
+                <li class="mt-2">
                   <button id="get" class="btn btn-primary">
                     Get locations
                   </button>
                 </li>
-                <li>
-                  <div>
-                    <div class="input-group">
-                      <span class="input-group-text">Latitude</span>
-                      <input type="number" class="form-control" name="lat" />
+                <li class="mt-2">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="input-group">
+                        <span class="input-group-text">Latitude</span>
+                        <input type="number" class="form-control" name="lat" />
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-text">Longitude</span>
+                        <input type="number" class="form-control" name="long" />
+                      </div>
                     </div>
-                    <div class="input-group">
-                      <span class="input-group-text">Longitude</span>
-                      <input type="number" class="form-control" name="long" />
+                    <div class="col-md-4 align-self-center">
+                      <button id="post" class="btn btn-success">
+                        Add location
+                      </button>
                     </div>
-                    <button id="post" class="btn btn-success">
-                      Add location
-                    </button>
                   </div>
                 </li>
-                <li>
-                  <div>
-                    <div class="input-group">
-                      <span class="input-group-text">ID</span>
-                      <input type="number" class="form-control" name="del" />
+                <li class="mt-2">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="input-group">
+                        <span class="input-group-text">ID</span>
+                        <input type="number" class="form-control" name="del" />
+                      </div>
                     </div>
-                    <button id="delete" class="btn btn-danger">
-                      Delete location
-                    </button>
+                    <div class="col-md-4 align-self-center">
+                      <button id="delete" class="btn btn-danger">
+                        Delete location
+                      </button>
+                    </div>
                   </div>
                 </li>
               </ul>
